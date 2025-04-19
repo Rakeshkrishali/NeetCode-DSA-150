@@ -16,6 +16,8 @@
 
 
 
+//Time complexity is O(n) — very efficient.
+
 function hasDuplicate(nums) {
     const set = new Set()
     for(let i = 0; i < nums.length; i++)
