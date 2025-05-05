@@ -49,3 +49,45 @@ var reverseWords = function(s) {
 
     return ans.trim(); // Remove trailing space
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Two pointer solution 
+
+var reverseWords = function(s) {
+    let str = s.trim();
+    let i = str.length - 1;
+    let j = i;
+    let result = [];
+
+    while (i >= 0) {
+        // Move i to the start of the current word
+        while (i >= 0 && str.charAt(i) !== ' ') {
+            i--;
+        }
+        // Extract word
+        result.push(str.substring(i + 1, j + 1));
+
+        // Skip spaces
+        while (i >= 0 && str.charAt(i) === ' ') {
+            i--;
+        }
+
+        j = i;
+    }
+
+    return result.join(' ');
+};
